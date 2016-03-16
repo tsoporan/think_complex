@@ -50,13 +50,13 @@ class Edge(tuple):
 
 def main(script, args):
     v = Vertex('v')
-    print v
+    print(v)
     w = Vertex('w')
-    print w
+    print(w)
     e = Edge(v, w)
-    print e
+    print(e)
     g = Graph([v,w], [e])
-    print g
+    print(g)
 
 if __name__ == '__main__':
     import sys
