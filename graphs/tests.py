@@ -50,7 +50,15 @@ class TestGraph(unittest.TestCase):
 
 
     def test_get_edge(self):
-        pass
+
+        v = Vertex(1)
+        v2 = Vertex(2)
+        e = Edge(v, v2)
+
+        g = Graph(vs=[v,v2], es=[e])
+
+        self.assertEqual(g.get_edge(v, v), None)
+        self.assertEqual(g.get_edge(v, v2), e)
 
     def test_remove_edge(self):
         pass

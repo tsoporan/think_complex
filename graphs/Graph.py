@@ -18,17 +18,26 @@ class Graph(dict):
             self.add_edge(e)
 
     def add_vertex(self, v):
-        """ add vertex v to graph """
+        """ Add vertex v to graph """
         self[v] = {}
 
     def add_edge(self, e):
-        """ add edge e to graph by adding an entry in
-        both directions.
+        """
+        Add edge e to graph by adding an entry in both directions.
         If there is already an edge connecting these Verticies, the
-        new edge replaces it"""
-        v, w = e
-        self[v][w] = e
-        self[w][v] = e
+        new edge replaces it
+        """
+        v1, v2 = e
+        self[v1][v2] = e
+        self[v2][v1] = e
+
+    def get_edge(self, v1, v2):
+        """Providied two verticies get the edge between them"""
+
+        try:
+            return self[v1][v2]
+        except KeyError:
+            return None
 
 class Vertex(object):
     def __init__(self, label=''):
