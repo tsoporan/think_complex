@@ -39,6 +39,18 @@ class Graph(dict):
         except KeyError:
             return None
 
+    def remove_edge(self, e):
+        """ Takes an edge and removes all references of it from the graph """
+
+        v1, v2 = e
+
+        # Edges are created in both directions, remove both references
+        try:
+            del self[v1][v2]
+            del self[v2][v1]
+        except KeyError:
+            return None
+
 class Vertex(object):
     def __init__(self, label=''):
         self.label = label
