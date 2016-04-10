@@ -51,6 +51,10 @@ class Graph(dict):
         except KeyError:
             return None
 
+    def verticies(self):
+        """ Return list of graphs verticies """
+        return self.keys()
+
 class Vertex(object):
     def __init__(self, label=''):
         self.label = label

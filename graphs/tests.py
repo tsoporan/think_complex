@@ -75,9 +75,27 @@ class TestGraph(unittest.TestCase):
 
 
     def test_list_verticies(self):
-        pass
+
+        v = Vertex(1)
+        v2 = Vertex(2)
+        v3 = Vertex(3)
+
+        g = Graph(vs=[v, v2, v3], es=[])
+
+        self.assertEqual(g.verticies(), [v, v2, v3])
 
     def test_list_edges(self):
+        #v = Vertex(1)
+        #v2 = Vertex(2)
+        #v3 = Vertex(3)
+
+        #e = Edge(v, v2)
+        #e2 = Edge(v2, v3)
+        #e3 = Edge(v3, v)
+
+        #g = Graph(vs=[v, v2, v3], es=[e, e2, e3])
+
+        #self.assertEqual(g.edges(), [e, e2, e3])
         pass
 
     def test_list_adjacent_vertices(self):
