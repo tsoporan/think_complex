@@ -55,6 +55,13 @@ class Graph(dict):
         """ Return list of graphs verticies """
         return self.keys()
 
+    def edges(self):
+        """ Return a list of graphs edges """
+        es = []
+        for k in self.keys():
+            es += self[k].values()
+        return es
+
 class Vertex(object):
     def __init__(self, label=''):
         self.label = label

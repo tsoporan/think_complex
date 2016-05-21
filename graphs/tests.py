@@ -82,21 +82,27 @@ class TestGraph(unittest.TestCase):
 
         g = Graph(vs=[v, v2, v3], es=[])
 
-        self.assertEqual(g.verticies(), [v, v2, v3])
+        verticies = g.verticies()
+
+        self.assertTrue(v in verticies)
+        self.assertTrue(v2 in verticies)
+        self.assertTrue(v3 in verticies)
 
     def test_list_edges(self):
-        #v = Vertex(1)
-        #v2 = Vertex(2)
-        #v3 = Vertex(3)
+        v = Vertex(1)
+        v2 = Vertex(2)
+        v3 = Vertex(3)
 
-        #e = Edge(v, v2)
-        #e2 = Edge(v2, v3)
-        #e3 = Edge(v3, v)
+        e = Edge(v, v2)
+        e2 = Edge(v2, v3)
+        e3 = Edge(v3, v)
 
-        #g = Graph(vs=[v, v2, v3], es=[e, e2, e3])
+        g = Graph(vs=[v, v2, v3], es=[e, e2, e3])
 
-        #self.assertEqual(g.edges(), [e, e2, e3])
-        pass
+        edges = g.edges()
+        self.assertTrue(e in edges)
+        self.assertTrue(e2 in edges)
+        self.assertTrue(e3 in edges)
 
     def test_list_adjacent_vertices(self):
         pass
