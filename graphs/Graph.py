@@ -62,6 +62,14 @@ class Graph(dict):
             es += self[k].values()
         return es
 
+    def out_vertices(self, v):
+        """ Takes a vertex and returns list of adjacent vertices - the ones connected by a given edge"""
+        if v in self:
+            return self[v].keys()
+        return []
+
+
+
 class Vertex(object):
     def __init__(self, label=''):
         self.label = label

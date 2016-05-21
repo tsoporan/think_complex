@@ -105,7 +105,23 @@ class TestGraph(unittest.TestCase):
         self.assertTrue(e3 in edges)
 
     def test_list_adjacent_vertices(self):
-        pass
+
+        v = Vertex(1)
+        v2 = Vertex(2)
+        v3 = Vertex(3)
+
+
+        e = Edge(v, v2)
+        e2 = Edge(v2, v3)
+        e3 = Edge(v3, v)
+
+        g = Graph([v, v2, v3], [e, e2, e3])
+        adjacent = g.out_vertices(v)
+
+        # Vertex v is connected to v2 and v3
+        self.assertTrue(v2 in adjacent)
+        self.assertTrue(v3 in adjacent)
+        self.assertTrue(len(adjacent), 2)
 
     def test_list_connected_edges(self):
         pass
