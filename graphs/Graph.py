@@ -68,7 +68,11 @@ class Graph(dict):
             return self[v].keys()
         return []
 
-
+    def out_edges(self, v):
+        """ Takes a vertext and returns a list of edges connected to vertex """
+        if v in self:
+            return self[v].values()
+        return []
 
 class Vertex(object):
     def __init__(self, label=''):
