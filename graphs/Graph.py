@@ -51,7 +51,7 @@ class Graph(dict):
         except KeyError:
             return None
 
-    def verticies(self):
+    def vertices(self):
         """ Return list of graphs verticies """
         return self.keys()
 
@@ -69,10 +69,21 @@ class Graph(dict):
         return []
 
     def out_edges(self, v):
-        """ Takes a vertext and returns a list of edges connected to vertex """
+        """ Takes a vertex and returns a list of edges connected to vertex """
         if v in self:
             return self[v].values()
         return []
+
+    def add_all_edges(self):
+        """ Starts with an edgeless graph and adds edges for all vertices """
+
+        vertices = self.vertices()
+
+        for i, j in enumerate(vertices):
+            for k, l in enumerate(vertices):
+                if i == k: break
+                e = Edge(j, l)
+                self.add_edge(e)
 
 class Vertex(object):
     def __init__(self, label=''):

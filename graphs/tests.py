@@ -74,7 +74,7 @@ class TestGraph(unittest.TestCase):
         self.assertEqual(g[v2], {})
 
 
-    def test_list_verticies(self):
+    def test_list_vertices(self):
 
         v = Vertex(1)
         v2 = Vertex(2)
@@ -82,11 +82,11 @@ class TestGraph(unittest.TestCase):
 
         g = Graph(vs=[v, v2, v3], es=[])
 
-        verticies = g.verticies()
+        vertices = g.vertices()
 
-        self.assertTrue(v in verticies)
-        self.assertTrue(v2 in verticies)
-        self.assertTrue(v3 in verticies)
+        self.assertTrue(v in vertices)
+        self.assertTrue(v2 in vertices)
+        self.assertTrue(v3 in vertices)
 
     def test_list_edges(self):
         v = Vertex(1)
@@ -143,8 +143,18 @@ class TestGraph(unittest.TestCase):
 
 
     def test_add_all_edges(self):
-        pass
 
+        v = Vertex(1)
+        v2 = Vertex(2)
+
+        g = Graph([v, v2])
+
+        self.assertEqual(g.edges(), [])
+
+        g.add_all_edges()
+
+        self.assertEqual(g[v][v2], Edge(v2, v))
+        self.assertEqual(g[v2][v], Edge(v2, v))
 
 if __name__ == '__main__':
     unittest.main()
